@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "BrandPage";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
+}
+
+
+
+<style>
+    .product-entry {
+        width: 360px;
+        height: 470px;
+        margin: 10px;
+        border: 1px solid;
+        padding: 25px;
+    }
+
+    .product-img {
+    }
+</style>
+<div class="colorlib-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                <h2><span>Brand Products</span></h2>
+            </div>
+        </div>
+        @{
+            foreach (var item in ViewBag.show_brand_product)
+            {
+                <div class="row" style="float:left">
+                    <div class="col-md-3 text-center">
+                        <div class="product-entry">
+                            <div class="product-img" style="background-image: url('../../Product_images/@item.product_image');">
+
+
+                            </div>
+                            <div class="desc">
+                                <h3><a href="@Url.Action("Product_info","Carts", new  {id=item.p_id})">@item.product_name</a></h3>
+                                <p class="price"><span>@item.product_price</span> <span class="sale"></span> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        }
+
+    </div>
+</div>

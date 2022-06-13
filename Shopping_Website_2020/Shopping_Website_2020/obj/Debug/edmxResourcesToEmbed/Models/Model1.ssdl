@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shopping_website_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="100" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_brand">
+    <Key>
+      <PropertyRef Name="b_id" />
+    </Key>
+    <Property Name="b_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="brand_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_category">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_invoice">
+    <Key>
+      <PropertyRef Name="invoice_id" />
+    </Key>
+    <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userID" Type="int" />
+    <Property Name="invoice_date" Type="datetime" />
+    <Property Name="total_bill" Type="int" />
+    <Property Name="entrydate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_order">
+    <Key>
+      <PropertyRef Name="o_id" />
+    </Key>
+    <Property Name="o_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="userID" Type="int" />
+    <Property Name="o_date" Type="datetime" />
+    <Property Name="o_unitPrice" Type="int" />
+    <Property Name="qty" Type="int" />
+    <Property Name="bill" Type="int" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_product">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="product_price" Type="int" />
+    <Property Name="product_detail" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="brand_id" Type="int" />
+    <Property Name="product_image" Type="nvarchar" MaxLength="200" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_shipment">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userID" Type="int" />
+    <Property Name="fullName" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="100" />
+    <Property Name="shipment_address" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="card_number" Type="nvarchar" MaxLength="100" />
+    <Property Name="card_expiration" Type="nvarchar" MaxLength="100" />
+    <Property Name="total_balance" Type="int" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="100" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" />
+    <Property Name="entry_date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__tb_invoic__userI__1DE57479">
+    <End Role="tb_user" Type="Self.tb_user" Multiplicity="0..1" />
+    <End Role="tb_invoice" Type="Self.tb_invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_invoice">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_order__invoic__1FCDBCEB">
+    <End Role="tb_invoice" Type="Self.tb_invoice" Multiplicity="0..1" />
+    <End Role="tb_order" Type="Self.tb_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="tb_order">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_order__produc__1ED998B2">
+    <End Role="tb_product" Type="Self.tb_product" Multiplicity="0..1" />
+    <End Role="tb_order" Type="Self.tb_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_product">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="tb_order">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_order__userID__20C1E124">
+    <End Role="tb_user" Type="Self.tb_user" Multiplicity="0..1" />
+    <End Role="tb_order" Type="Self.tb_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_order">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_produc__brand__22AA2996">
+    <End Role="tb_brand" Type="Self.tb_brand" Multiplicity="0..1" />
+    <End Role="tb_product" Type="Self.tb_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_brand">
+        <PropertyRef Name="b_id" />
+      </Principal>
+      <Dependent Role="tb_product">
+        <PropertyRef Name="brand_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_produc__categ__21B6055D">
+    <End Role="tb_category" Type="Self.tb_category" Multiplicity="0..1" />
+    <End Role="tb_product" Type="Self.tb_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="tb_product">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_shipme__userI__239E4DCF">
+    <End Role="tb_user" Type="Self.tb_user" Multiplicity="0..1" />
+    <End Role="tb_shipment" Type="Self.tb_shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_shipment">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="shopping_website_DBModelStoreContainer">
+    <EntitySet Name="tb_admin" EntityType="Self.tb_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_brand" EntityType="Self.tb_brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_category" EntityType="Self.tb_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_invoice" EntityType="Self.tb_invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_order" EntityType="Self.tb_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_product" EntityType="Self.tb_product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_shipment" EntityType="Self.tb_shipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_user" EntityType="Self.tb_user" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tb_invoic__userI__1DE57479" Association="Self.FK__tb_invoic__userI__1DE57479">
+      <End Role="tb_user" EntitySet="tb_user" />
+      <End Role="tb_invoice" EntitySet="tb_invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_order__invoic__1FCDBCEB" Association="Self.FK__tb_order__invoic__1FCDBCEB">
+      <End Role="tb_invoice" EntitySet="tb_invoice" />
+      <End Role="tb_order" EntitySet="tb_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_order__produc__1ED998B2" Association="Self.FK__tb_order__produc__1ED998B2">
+      <End Role="tb_product" EntitySet="tb_product" />
+      <End Role="tb_order" EntitySet="tb_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_order__userID__20C1E124" Association="Self.FK__tb_order__userID__20C1E124">
+      <End Role="tb_user" EntitySet="tb_user" />
+      <End Role="tb_order" EntitySet="tb_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_produc__brand__22AA2996" Association="Self.FK__tb_produc__brand__22AA2996">
+      <End Role="tb_brand" EntitySet="tb_brand" />
+      <End Role="tb_product" EntitySet="tb_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_produc__categ__21B6055D" Association="Self.FK__tb_produc__categ__21B6055D">
+      <End Role="tb_category" EntitySet="tb_category" />
+      <End Role="tb_product" EntitySet="tb_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_shipme__userI__239E4DCF" Association="Self.FK__tb_shipme__userI__239E4DCF">
+      <End Role="tb_user" EntitySet="tb_user" />
+      <End Role="tb_shipment" EntitySet="tb_shipment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

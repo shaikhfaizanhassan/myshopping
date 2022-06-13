@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shopping_website_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tb_brand">
+    <Key>
+      <PropertyRef Name="b_id" />
+    </Key>
+    <Property Name="b_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="brand_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_product" Relationship="Self.FK__tb_produc__brand__22AA2996" FromRole="tb_brand" ToRole="tb_product" />
+  </EntityType>
+  <EntityType Name="tb_category">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_product" Relationship="Self.FK__tb_produc__categ__21B6055D" FromRole="tb_category" ToRole="tb_product" />
+  </EntityType>
+  <EntityType Name="tb_invoice">
+    <Key>
+      <PropertyRef Name="invoice_id" />
+    </Key>
+    <Property Name="invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="invoice_date" Type="DateTime" Precision="3" />
+    <Property Name="total_bill" Type="Int32" />
+    <Property Name="entrydate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_user" Relationship="Self.FK__tb_invoic__userI__1DE57479" FromRole="tb_invoice" ToRole="tb_user" />
+    <NavigationProperty Name="tb_order" Relationship="Self.FK__tb_order__invoic__1FCDBCEB" FromRole="tb_invoice" ToRole="tb_order" />
+  </EntityType>
+  <EntityType Name="tb_order">
+    <Key>
+      <PropertyRef Name="o_id" />
+    </Key>
+    <Property Name="o_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="o_date" Type="DateTime" Precision="3" />
+    <Property Name="o_unitPrice" Type="Int32" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="bill" Type="Int32" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_invoice" Relationship="Self.FK__tb_order__invoic__1FCDBCEB" FromRole="tb_order" ToRole="tb_invoice" />
+    <NavigationProperty Name="tb_product" Relationship="Self.FK__tb_order__produc__1ED998B2" FromRole="tb_order" ToRole="tb_product" />
+    <NavigationProperty Name="tb_user" Relationship="Self.FK__tb_order__userID__20C1E124" FromRole="tb_order" ToRole="tb_user" />
+  </EntityType>
+  <EntityType Name="tb_product">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="product_price" Type="Int32" />
+    <Property Name="product_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="brand_id" Type="Int32" />
+    <Property Name="product_image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_brand" Relationship="Self.FK__tb_produc__brand__22AA2996" FromRole="tb_product" ToRole="tb_brand" />
+    <NavigationProperty Name="tb_category" Relationship="Self.FK__tb_produc__categ__21B6055D" FromRole="tb_product" ToRole="tb_category" />
+    <NavigationProperty Name="tb_order" Relationship="Self.FK__tb_order__produc__1ED998B2" FromRole="tb_product" ToRole="tb_order" />
+  </EntityType>
+  <EntityType Name="tb_shipment">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="fullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="shipment_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="card_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="card_expiration" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="total_balance" Type="Int32" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_user" Relationship="Self.FK__tb_shipme__userI__239E4DCF" FromRole="tb_shipment" ToRole="tb_user" />
+  </EntityType>
+  <EntityType Name="tb_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_invoice" Relationship="Self.FK__tb_invoic__userI__1DE57479" FromRole="tb_user" ToRole="tb_invoice" />
+    <NavigationProperty Name="tb_order" Relationship="Self.FK__tb_order__userID__20C1E124" FromRole="tb_user" ToRole="tb_order" />
+    <NavigationProperty Name="tb_shipment" Relationship="Self.FK__tb_shipme__userI__239E4DCF" FromRole="tb_user" ToRole="tb_shipment" />
+  </EntityType>
+  <Association Name="FK__tb_produc__brand__22AA2996">
+    <End Role="tb_brand" Type="Self.tb_brand" Multiplicity="0..1" />
+    <End Role="tb_product" Type="Self.tb_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_brand">
+        <PropertyRef Name="b_id" />
+      </Principal>
+      <Dependent Role="tb_product">
+        <PropertyRef Name="brand_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_produc__categ__21B6055D">
+    <End Role="tb_category" Type="Self.tb_category" Multiplicity="0..1" />
+    <End Role="tb_product" Type="Self.tb_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="tb_product">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_invoic__userI__1DE57479">
+    <End Role="tb_user" Type="Self.tb_user" Multiplicity="0..1" />
+    <End Role="tb_invoice" Type="Self.tb_invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_invoice">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_order__invoic__1FCDBCEB">
+    <End Role="tb_invoice" Type="Self.tb_invoice" Multiplicity="0..1" />
+    <End Role="tb_order" Type="Self.tb_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="tb_order">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_order__produc__1ED998B2">
+    <End Role="tb_product" Type="Self.tb_product" Multiplicity="0..1" />
+    <End Role="tb_order" Type="Self.tb_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_product">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="tb_order">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_order__userID__20C1E124">
+    <End Role="tb_user" Type="Self.tb_user" Multiplicity="0..1" />
+    <End Role="tb_order" Type="Self.tb_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_order">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_shipme__userI__239E4DCF">
+    <End Role="tb_user" Type="Self.tb_user" Multiplicity="0..1" />
+    <End Role="tb_shipment" Type="Self.tb_shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_shipment">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="shopping_website_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_admin" EntityType="Self.tb_admin" />
+    <EntitySet Name="tb_brand" EntityType="Self.tb_brand" />
+    <EntitySet Name="tb_category" EntityType="Self.tb_category" />
+    <EntitySet Name="tb_invoice" EntityType="Self.tb_invoice" />
+    <EntitySet Name="tb_order" EntityType="Self.tb_order" />
+    <EntitySet Name="tb_product" EntityType="Self.tb_product" />
+    <EntitySet Name="tb_shipment" EntityType="Self.tb_shipment" />
+    <EntitySet Name="tb_user" EntityType="Self.tb_user" />
+    <AssociationSet Name="FK__tb_produc__brand__22AA2996" Association="Self.FK__tb_produc__brand__22AA2996">
+      <End Role="tb_brand" EntitySet="tb_brand" />
+      <End Role="tb_product" EntitySet="tb_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_produc__categ__21B6055D" Association="Self.FK__tb_produc__categ__21B6055D">
+      <End Role="tb_category" EntitySet="tb_category" />
+      <End Role="tb_product" EntitySet="tb_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_invoic__userI__1DE57479" Association="Self.FK__tb_invoic__userI__1DE57479">
+      <End Role="tb_user" EntitySet="tb_user" />
+      <End Role="tb_invoice" EntitySet="tb_invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_order__invoic__1FCDBCEB" Association="Self.FK__tb_order__invoic__1FCDBCEB">
+      <End Role="tb_invoice" EntitySet="tb_invoice" />
+      <End Role="tb_order" EntitySet="tb_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_order__produc__1ED998B2" Association="Self.FK__tb_order__produc__1ED998B2">
+      <End Role="tb_product" EntitySet="tb_product" />
+      <End Role="tb_order" EntitySet="tb_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_order__userID__20C1E124" Association="Self.FK__tb_order__userID__20C1E124">
+      <End Role="tb_user" EntitySet="tb_user" />
+      <End Role="tb_order" EntitySet="tb_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_shipme__userI__239E4DCF" Association="Self.FK__tb_shipme__userI__239E4DCF">
+      <End Role="tb_user" EntitySet="tb_user" />
+      <End Role="tb_shipment" EntitySet="tb_shipment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

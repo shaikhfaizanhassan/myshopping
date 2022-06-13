@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Shopping_Website_2020.Models.tb_user>
+
+@{
+    ViewBag.Title = "user_info";
+    Layout = "~/Views/Shared/_UserDashboardLayout.cshtml";
+}
+
+<h2>User Information</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Index", "User", new { }, new { @class = "btn btn-success" })
+</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-responsive" style="font-size:20px;">
+            
+                <tr>
+                    <th>
+                        <label>User Id</label>
+                    </th>
+                    <th>
+                        <label>Full Name</label>
+                    </th>
+                    <th>
+                        <label>Email</label>
+                    </th>
+                    <th>
+                       <label>Password</label>
+                    </th>
+                   
+                    <th></th>
+                </tr>
+
+             
+                    <tr>
+                        <td>
+                            @Session["uid"]
+                        </td>
+                        <td>
+                            @Session["email"]
+                        </td>
+                        <td>
+                            @Session["fullname"]
+                        </td>
+                        <td>
+                            @Session["pass"]
+                        </td>   
+                    </tr>
+                
+            </table>
+            </div>
+</div>

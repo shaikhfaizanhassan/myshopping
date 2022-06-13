@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Shopping_Website_2020.Models.tb_order>
+
+@{
+    ViewBag.Title = "Sales_report";
+    Layout = "~/Views/Shared/_AdminDashboardLayout.cshtml";
+}
+
+<h2>Sales Report</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.o_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.o_unitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bill)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.entry_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_invoice.invoice_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_product.product_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_user.fullname)
+            </th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.o_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.o_unitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bill)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.entry_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tb_invoice.invoice_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tb_product.product_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tb_user.fullname)
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

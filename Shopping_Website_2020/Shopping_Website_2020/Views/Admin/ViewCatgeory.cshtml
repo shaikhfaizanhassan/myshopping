@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Shopping_Website_2020.Models.tb_category>
+
+@{
+    ViewBag.Title = "ViewCatgeory";
+    Layout = "~/Views/Shared/_AdminDashboardLayout.cshtml";
+}
+
+<h2>View Catgeory</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddNewCatgeory","Admin", new { @class="btn btn-success"})
+</p>
+<table id="jdtable" class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                <label>Catgeory Name</label>
+            </th>
+            <th>
+                <label>Entry Date</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.entry_date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.c_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.c_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.c_id })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+
+</table>

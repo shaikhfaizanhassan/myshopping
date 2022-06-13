@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "order_info";
+    Layout = "~/Views/Shared/_UserDashboardLayout.cshtml";
+}
+
+<h2>View Order Information</h2>
+<br />
+
+<table id="jdtable" class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                <label>S.NO</label>
+            </th>
+            <th>
+                <label>Product ID</label>
+            </th>
+            <th>
+                <label>Invoice ID</label>
+            </th>
+            <th>
+                <label>User ID</label>
+            </th>
+            <th>
+                <label>Order Date</label>
+            </th>
+            <th>
+                <label>Unit Price</label>
+            </th>
+            <th>
+                <label>Qty</label>
+            </th>
+            <th>
+                <label>Amount</label>
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.showOrder)
+        {
+            <tr>
+                <td>
+                    @item.o_id
+                </td>
+                <td>
+                    @item.product_id
+                </td>
+                <td>
+                    @item.invoice_id
+                </td>
+                <td>
+                    @item.userID
+                </td>
+                <td>
+                    @item.o_date
+                </td>
+                <td>
+                    @item.o_unitPrice
+                </td>
+                <td>
+                    @item.qty
+                </td>
+                <td>
+                    @item.bill
+                </td>
+            </tr>
+        }
+    </tbody>
+    <thead>
+        <tr>
+    
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="color:orangered; font-weight:bolder; text-decoration:underline">@ViewBag.ShowOrderAmount</td>
+        </tr>
+    </tbody>
+</table>
+
+
+

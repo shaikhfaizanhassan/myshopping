@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Shopping_Website_2020.Models.tb_product>
+@{
+    ViewBag.Title = "SearchProduct";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
+}
+
+<style>
+    .product-entry {
+        width: 360px;
+        height: 470px;
+        margin: 10px;
+        border: 1px solid;
+        padding: 25px;
+    }
+
+    .product-img {
+    }
+</style>
+
+
+<div class="colorlib-shop">
+    <div class="container">
+        @{
+            if (Model.Count() == 0)
+            {
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+
+                        <h2><span>Product Not Available</span></h2>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                foreach (var item in ViewBag.p)
+                {
+                    <div class="row" style="float:left">
+                        <div class="col-md-3 text-center">
+                            <div class="product-entry">
+                                <div class="product-img" style="background-image: url('../../Product_images/@item.product_image');">
+
+
+                                </div>
+                                <div class="desc">
+                                    <h3><a href="@Url.Action("Product_info", "Carts", new { id = item.p_id })">@item.product_name</a></h3>
+                                    <p class="price"><span>@item.product_price</span> <span class="sale"></span> </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

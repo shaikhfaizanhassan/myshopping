@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <!--Menu Section-->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">@Session["adminname"]</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">@Html.ActionLink("Add New Catgrory", "AddNewCatgeory", "Admin") </a></li>
+                        <li><a href="#">@Html.ActionLink("View Catgrory", "ViewCatgeory", "Admin") </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Brand<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">@Html.ActionLink("Add New Brand", "AddNewBrand", "Admin") </a></li>
+                        <li><a href="#">@Html.ActionLink("View Brand", "ViewBrand", "Admin") </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">@Html.ActionLink("Add New Product", "AddNewproduct", "Admin") </a></li>
+                        <li><a href="#">@Html.ActionLink("View Product", "Viewproduct", "Admin") </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">User<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">@Html.ActionLink("User Info", "user_info", "Admin") </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">@Html.ActionLink("Sales Report", "Sales_report", "Admin") </a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="@Url.Action("Logout","Admin")"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <!--Slider Section-->
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/scripts/jquery.dataTables.js"></script>
+    <script src="~/scripts/dataTables.bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/DTsite.js"></script>
+</body>
+</html>

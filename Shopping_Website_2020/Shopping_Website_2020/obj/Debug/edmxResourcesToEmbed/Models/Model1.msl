@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="shopping_website_DBModelStoreContainer" CdmEntityContainer="shopping_website_DBEntities">
+    <EntitySetMapping Name="tb_admin">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_admin">
+        <MappingFragment StoreEntitySet="tb_admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_brand">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_brand">
+        <MappingFragment StoreEntitySet="tb_brand">
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_category">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_category">
+        <MappingFragment StoreEntitySet="tb_category">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_invoice">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_invoice">
+        <MappingFragment StoreEntitySet="tb_invoice">
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="invoice_date" ColumnName="invoice_date" />
+          <ScalarProperty Name="total_bill" ColumnName="total_bill" />
+          <ScalarProperty Name="entrydate" ColumnName="entrydate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_order">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_order">
+        <MappingFragment StoreEntitySet="tb_order">
+          <ScalarProperty Name="o_id" ColumnName="o_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="o_date" ColumnName="o_date" />
+          <ScalarProperty Name="o_unitPrice" ColumnName="o_unitPrice" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="bill" ColumnName="bill" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_product">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_product">
+        <MappingFragment StoreEntitySet="tb_product">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="product_detail" ColumnName="product_detail" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+          <ScalarProperty Name="product_image" ColumnName="product_image" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_shipment">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_shipment">
+        <MappingFragment StoreEntitySet="tb_shipment">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="shipment_address" ColumnName="shipment_address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="card_number" ColumnName="card_number" />
+          <ScalarProperty Name="card_expiration" ColumnName="card_expiration" />
+          <ScalarProperty Name="total_balance" ColumnName="total_balance" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_user">
+      <EntityTypeMapping TypeName="shopping_website_DBModel.tb_user">
+        <MappingFragment StoreEntitySet="tb_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

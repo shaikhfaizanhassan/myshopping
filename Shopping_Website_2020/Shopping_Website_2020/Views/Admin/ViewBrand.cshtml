@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Shopping_Website_2020.Models.tb_brand>
+
+@{
+    ViewBag.Title = "ViewBrand";
+    Layout = "~/Views/Shared/_AdminDashboardLayout.cshtml";
+}
+
+<h2>View Brand</h2>
+
+<p>
+    @Html.ActionLink("Create New","ViewBrand","Admin" , new { @class="btn btn-success"})
+</p>
+<table id="jdtable" class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                <label>Brand Name</label>
+            </th>
+            <th>
+                <label>Entry Date</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.brand_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.entry_date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "brandEdit", new { id = item.b_id }) |
+                    @Html.ActionLink("Details", "brandDetails", new { id = item.b_id }) |
+                    @Html.ActionLink("Delete", "brandDelete", new { id = item.b_id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

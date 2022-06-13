@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Product_info";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
+}
+
+<style>
+    .product-entry {
+        width: 400px;
+        height: 470px;
+        margin: 10px;
+        border: 1px solid;
+        padding: 25px;
+    }
+
+    .product-img {
+        width:auto;
+        height:auto;
+    }
+</style>
+
+<div class="colorlib-shop">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+            <h2><span>Product Info</span></h2>
+        </div>
+    </div>
+    @{
+        using (@Html.BeginForm())
+        {
+            foreach (var item in ViewBag.show_single_pro)
+            {
+                <div class="container">
+                    <div class="row row-pb-lg">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="product-detail-wrap">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="product-entry">
+                                            <div class="product-img" style="background-image: url('../../Product_images/@item.product_image');">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="desc">
+                                            <h3>@item.product_name</h3>
+                                            <p class="price">
+                                                <span>$@item.product_price</span>
+                                            </p>
+                                            <p>@item.product_detail</p>
+
+
+                                            <div class="row row-pb-sm">
+                                                <div class="col-md-4">
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
+                                                                <i class="icon-minus2"></i>
+                                                            </button>
+                                                        </span>
+                                                        <input type="text" id="qty" name="qty" class="form-control input-number" value="1" min="1" max="100">
+                                                        <span class="input-group-btn">
+                                                            <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                                                <i class="icon-plus2"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                <input type="submit" value="Add To Cart" class="btn btn-primary btn-addtocart" />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    }
+
+
+</div>
+
+
+
+

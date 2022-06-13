@@ -1,0 +1,74 @@
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\csc.exe
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\System.Collections.Immutable.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\vbc.exe
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\VBCSCompiler.exe
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\VBCSCompiler.exe.config
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\Shopping_Website_2020.dll.config
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\Shopping_Website_2020.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\Shopping_Website_2020.pdb
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\Microsoft.Web.Infrastructure.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Helpers.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Mvc.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Razor.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Deployment.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Razor.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Razor.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Deployment.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Razor.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Helpers.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Mvc.xml
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\obj\Debug\Shopping_Website_2020.csprojResolveAssemblyReference.cache
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\obj\Debug\Shopping_Website_2020.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\obj\Debug\Shopping_Website_2020.pdb
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.dll
+c:\users\123\documents\visual studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.xml
+C:\Users\123\Documents\Visual Studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.SqlServer.dll
+C:\Users\123\Documents\Visual Studio 2015\Projects\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.SqlServer.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\csc.exe
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\System.Collections.Immutable.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\System.Reflection.Metadata.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\vbc.exe
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\VBCSCompiler.exe
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\roslyn\VBCSCompiler.exe.config
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\Shopping_Website_2020.dll.config
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\Shopping_Website_2020.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\Shopping_Website_2020.pdb
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.SqlServer.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\Microsoft.Web.Infrastructure.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Helpers.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Mvc.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Razor.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Deployment.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Razor.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\EntityFramework.SqlServer.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Razor.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Deployment.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Webpages.Razor.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Helpers.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\bin\System.Web.Mvc.xml
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\obj\Debug\Shopping_Website_2020.csprojResolveAssemblyReference.cache
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\obj\Debug\Shopping_Website_2020.dll
+D:\.Net work\Shopping_Website_2020\Shopping_Website_2020\obj\Debug\Shopping_Website_2020.pdb
